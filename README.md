@@ -40,7 +40,9 @@ You are given a number. Print even if the number is even or odd otherwise.
 ```swift
 let number = 2
 
-if (number % 2) == 0 {
+if (number == 0){
+    print("not even nor odd")
+} else if (number % 2) == 0 {
     print("even")
 } else {
     print("odd")
@@ -89,7 +91,18 @@ You are working on a smart-fridge. The smart-fridge knows how old the eggs and b
 var baconAge = 6 // the bacon is 6 days old
 var eggsAge = 12 // eggs are 12 days old
 
-// your code here
+var isBaconGood: Bool { if baconAge <= 7 { return true} else {return false} }
+var isEggsGood: Bool { if eggsAge <= 21 { return true} else {return false} }
+
+if isEggsGood && isBaconGood {
+    print("you can cook bacon and eggs")
+} else if !isEggsGood && !isBaconGood {
+    print("throw out bacon and eggs")
+} else if !isEggsGood {
+    print("throw out eggs")
+} else {
+    print("throw out bacon")
+}
 ```
 
 ***
@@ -101,7 +114,11 @@ The above rule is valid except that every 100 years special rules apply. Years t
 ```swift
 let year = 2014
 
-// your code here
+if (year % 100 == 0) && (year % 400 != 0) {
+    print("Not Leap Year!")
+} else if (year % 4 == 0) || (year % 400 == 0) {
+    print("Leap Year!")
+}
 ```
 
 ***
@@ -112,7 +129,8 @@ If you use `random()` it will give you a random number within a specified range.
 ```swift
 let randomNum = Int.random(in: 0...100)
 
-// your code here
+var headsOrTails = (randomNum % 2 == 0) ? "heads" : "tails"
+print(headsOrTails)
 ```
 
 Hint: use an if/else block along with the `%` operator
@@ -128,7 +146,15 @@ var b = 6
 var c = 3
 var d = 4
 
-// your code here
+let numArry = [a,b,c,d]
+var smallestNum =  numArry[0]
+
+for numbers in numArry {
+    if smallestNum > numbers {
+        smallestNum = numbers
+    }
+}
+print(smallestNum)
 ```
 
 ***
